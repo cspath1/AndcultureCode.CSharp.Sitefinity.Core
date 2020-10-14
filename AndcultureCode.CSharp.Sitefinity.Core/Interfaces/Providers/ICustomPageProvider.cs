@@ -29,7 +29,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Providers
         /// <param name="entities">The list of entities.</param>
         /// <param name="createdById">The ID of the user creating the entity.</param>
         /// <returns></returns>
-        IResult<bool> Create<T>(
+        IResult<IEnumerable<T>> Create<T>(
             IEnumerable<T> entities,
             Guid?          createdById = null
         ) where T : DataItemEntity;
@@ -47,7 +47,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Providers
         IResult<bool> Delete<T>(
             Guid  id,
             Guid? deletedById = null,
-            bool  soft = true
+            bool  soft        = true
         ) where T : DataItemEntity;
 
         /// <summary>
@@ -63,36 +63,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Providers
         IResult<bool> Delete<T>(
             T     item,
             Guid? deletedById = null,
-            bool  soft = true
-        ) where T : DataItemEntity;
-
-        /// <summary>
-        /// Deletes a list of entities. Note that soft deleting an entity will
-        /// mark it as deleted and mark who deleted it (if the item inherits from IDeletable), while standard deleting
-        /// removes the entity entirely.
-        /// </summary>
-        /// <typeparam name="T">The concrete subclass of the DataItemEntity abstract class.</typeparam>
-        /// <param name="items">The list of items</param>
-        /// <param name="deletedById">The ID of the user deleting the entities.</param>
-        /// <param name="soft">Whether or not the deletion is a soft deletion.</param>
-        /// <returns></returns>
-        IResult<bool> Delete<T>(
-            IEnumerable<T> items,
-            Guid?          deletedById = null,
-            bool           soft        = true
-        ) where T : DataItemEntity;
-
-        /// <summary>
-        /// Retrieves an entity by ID. Optionally takes a list of objects to include
-        /// and attach to the record.
-        /// </summary>
-        /// <typeparam name="T">The concrete subclass of the DataItemEntity abstract class.</typeparam>
-        /// <param name="id">The ID of the entity.</param>
-        /// <param name="includes">An expression containing a list of objects/properties to include.</param>
-        /// <returns></returns>
-        IResult<T> FindById<T>(
-            Guid                        id,
-            Expression<Func<T, object>> includes = null
+            bool  soft        = true
         ) where T : DataItemEntity;
 
         /// <summary>
@@ -110,6 +81,19 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Providers
             Expression<Func<T, object>>               includes          = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy           = null,
             bool                                      narrowApplication = true
+        ) where T : DataItemEntity;
+
+        /// <summary>
+        /// Retrieves an entity by ID. Optionally takes a list of objects to include
+        /// and attach to the record.
+        /// </summary>
+        /// <typeparam name="T">The concrete subclass of the DataItemEntity abstract class.</typeparam>
+        /// <param name="id">The ID of the entity.</param>
+        /// <param name="includes">An expression containing a list of objects/properties to include.</param>
+        /// <returns></returns>
+        IResult<T> FindById<T>(
+            Guid id,
+            Expression<Func<T, object>> includes = null
         ) where T : DataItemEntity;
 
         /// <summary>
