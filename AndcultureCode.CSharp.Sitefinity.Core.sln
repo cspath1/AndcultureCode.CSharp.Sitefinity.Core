@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndcultureCode.CSharp.Sitefinity.Core", "AndcultureCode.CSharp.Sitefinity.Core\AndcultureCode.CSharp.Sitefinity.Core.csproj", "{0D07F9F4-55A1-402B-8136-31029A6F6C04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D07F9F4-55A1-402B-8136-31029A6F6C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D07F9F4-55A1-402B-8136-31029A6F6C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D07F9F4-55A1-402B-8136-31029A6F6C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D07F9F4-55A1-402B-8136-31029A6F6C04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56F1A945-B71C-4E84-90FF-8B340CDC3BB5}
+	EndGlobalSection
+EndGlobal
