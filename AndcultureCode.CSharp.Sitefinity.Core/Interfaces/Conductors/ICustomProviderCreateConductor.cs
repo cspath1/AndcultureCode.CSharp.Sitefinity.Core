@@ -6,7 +6,7 @@ using AndcultureCode.CSharp.Core.Interfaces.Conductors;
 
 namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
-    interface ICustomProviderCreateConductor : IConductor
+    public interface ICustomProviderCreateConductor : IConductor
     {
         /// <summary>
         /// Creates a single entity that's derived from the DataItemEntity abstract class.

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
-    interface ICustomProviderConductor : IConductor,
+    public interface ICustomProviderConductor : IConductor,
         ICustomProviderCreateConductor,
         ICustomProviderDeleteConductor,
         ICustomProviderReadConductor,

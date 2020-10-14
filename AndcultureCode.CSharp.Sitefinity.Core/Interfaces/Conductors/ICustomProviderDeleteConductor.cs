@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
-    interface ICustomProviderDeleteConductor : IConductor
+    public interface ICustomProviderDeleteConductor : IConductor
     {
         /// <summary>
         /// Deletes a single entity. Note that soft deleting an entity will

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
-    interface ICustomProviderUpdateConductor : IConductor
+    public interface ICustomProviderUpdateConductor : IConductor
     {
         /// <summary>
         /// Updates a single entity.

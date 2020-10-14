@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
-    interface ICustomProviderReadConductor : IConductor
+    public interface ICustomProviderReadConductor : IConductor
     {
         /// <summary>
         /// Retrieves an entity by ID. Optionally takes a list of objects to include
