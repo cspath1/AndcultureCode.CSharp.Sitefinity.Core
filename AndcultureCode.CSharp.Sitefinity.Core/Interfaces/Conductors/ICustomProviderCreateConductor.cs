@@ -27,7 +27,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
         /// <param name="entities">The list of entities.</param>
         /// <param name="createdById">The ID of the user creating the entity.</param>
         /// <returns></returns>
-        IResult<bool> Create<T>(
+        IResult<IEnumerable<T>> Create<T>(
             IEnumerable<T> entities, 
             Guid?          createdById = null
         ) where T : DataItemEntity;

@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AndcultureCode.CSharp.Conductors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AndcultureCode.CSharp.Conductors.1.1.2\lib\netstandard2.0\AndcultureCode.CSharp.Conductors.dll</HintPath>
+    </Reference>
     <Reference Include="AndcultureCode.CSharp.Core, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AndcultureCode.CSharp.Core.0.6.1\lib\netstandard2.0\AndcultureCode.CSharp.Core.dll</HintPath>
     </Reference>
@@ -315,6 +318,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Conductors\CustomProviderConductor.cs" />
+    <Compile Include="Conductors\CustomProviderCreateConductor.cs" />
+    <Compile Include="Conductors\CustomProviderDeleteConductor.cs" />
+    <Compile Include="Conductors\CustomProviderConductorBase.cs" />
+    <Compile Include="Conductors\CustomProviderReadConductor.cs" />
+    <Compile Include="Conductors\CustomProviderUpdateConductor.cs" />
     <Compile Include="Interfaces\Conductors\ICustomProviderConductor.cs" />
     <Compile Include="Interfaces\Conductors\ICustomProviderDeleteConductor.cs" />
     <Compile Include="Interfaces\Conductors\ICustomProviderReadConductor.cs" />

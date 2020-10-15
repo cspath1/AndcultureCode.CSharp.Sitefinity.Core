@@ -2,10 +2,6 @@
 using AndcultureCode.CSharp.Core.Interfaces.Conductors;
 using AndcultureCode.CSharp.Sitefinity.Core.Models.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
@@ -41,22 +37,6 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
             T     item, 
             Guid? deletedById = null, 
             bool  soft        = true
-        ) where T : DataItemEntity;
-
-        /// <summary>
-        /// Deletes a list of entities. Note that soft deleting an entity will
-        /// mark it as deleted and mark who deleted it (if the item inherits from IDeletable), while standard deleting
-        /// removes the entity entirely.
-        /// </summary>
-        /// <typeparam name="T">The concrete subclass of the DataItemEntity abstract class.</typeparam>
-        /// <param name="items">The list of items</param>
-        /// <param name="deletedById">The ID of the user deleting the entities.</param>
-        /// <param name="soft">Whether or not the deletion is a soft deletion.</param>
-        /// <returns></returns>
-        IResult<bool> Delete<T>(
-            IEnumerable<T> items,
-            Guid?          deletedById = null,
-            bool           soft        = true
         ) where T : DataItemEntity;
 
         /// <summary>
