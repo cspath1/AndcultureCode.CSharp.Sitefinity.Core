@@ -6,7 +6,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Interfaces.Conductors
 {
     public abstract class CustomProviderConductorBase : Conductor
     {
-        protected ICustomPageProvider getProvider()
+        protected virtual ICustomPageProvider getProvider()
         {
             var manager = PageManager.GetManager("CustomProvider");
 

@@ -11,12 +11,12 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Conductors
 {
     public class CustomProviderUpdateConductor : CustomProviderConductorBase, ICustomProviderUpdateConductor
     {
-        public IResult<bool> Update<T>(
+        public virtual IResult<bool> Update<T>(
             T     item,
             Guid? updatedById = null
         ) where T : DataItemEntity => getProvider().Update(item, updatedById);
 
-        public IResult<bool> Update<T>(
+        public virtual IResult<bool> Update<T>(
             IEnumerable<T> items,
             Guid?          updatedById = null
         ) where T : DataItemEntity => getProvider().Update(items, updatedById);

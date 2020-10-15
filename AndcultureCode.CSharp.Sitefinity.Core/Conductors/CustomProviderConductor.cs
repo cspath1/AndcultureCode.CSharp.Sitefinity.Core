@@ -65,12 +65,12 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Conductors
 
         #region Create
 
-        public IResult<T> Create<T>(
+        public virtual IResult<T> Create<T>(
             T     entity,
             Guid? createdById = null
         ) where T : DataItemEntity => _createConductor.Create(entity, createdById);
 
-        public IResult<IEnumerable<T>> Create<T>(
+        public virtual IResult<IEnumerable<T>> Create<T>(
             IEnumerable<T> entities,
             Guid?          createdById = null
         ) where T : DataItemEntity => _createConductor.Create(entities, createdById);
@@ -80,33 +80,33 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Conductors
 
         #region Delete
 
-        public IResult<bool> Delete<T>(
+        public virtual IResult<bool> Delete<T>(
             Guid  id,
             Guid? deletedById = null,
             bool  soft = true
         ) where T : DataItemEntity => _deleteConductor.Delete<T>(id, deletedById, soft);
 
-        public IResult<bool> Delete<T>(
+        public virtual IResult<bool> Delete<T>(
             T     item,
             Guid? deletedById = null,
             bool  soft = true
         ) where T : DataItemEntity => _deleteConductor.Delete(item, deletedById, soft);
 
-        public IResult<bool> Restore<T>(Guid id) where T : DataItemEntity => _deleteConductor.Restore<T>(id);
+        public virtual IResult<bool> Restore<T>(Guid id) where T : DataItemEntity => _deleteConductor.Restore<T>(id);
 
-        public IResult<bool> Restore<T>(T entity) where T : DataItemEntity => _deleteConductor.Restore(entity);
+        public virtual IResult<bool> Restore<T>(T entity) where T : DataItemEntity => _deleteConductor.Restore(entity);
 
         #endregion Delete
 
 
         #region Read
 
-        public IResult<T> FindById<T>(
+        public virtual IResult<T> FindById<T>(
             Guid                        id,
             Expression<Func<T, object>> includes = null
         ) where T : DataItemEntity => _readConductor.FindById<T>(id, includes);
 
-        public IResult<IQueryable<T>> FindAll<T>(
+        public virtual IResult<IQueryable<T>> FindAll<T>(
             Expression<Func<T, bool>>                 filter            = null,
             Expression<Func<T, object>>               includes          = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy           = null,
@@ -118,19 +118,19 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Conductors
 
         #region Update
 
-        public IResult<bool> Update<T>(
+        public virtual IResult<bool> Update<T>(
             T     item,
             Guid? updatedById = null
         ) where T : DataItemEntity => _updateConductor.Update(item, updatedById);
 
-        public IResult<bool> Update<T>(
+        public virtual IResult<bool> Update<T>(
             IEnumerable<T> items,
             Guid?          updatedById = null
         ) where T : DataItemEntity => _updateConductor.Update(items, updatedById);
 
         #endregion Update
 
-            #endregion Public Methods
+        #endregion Public Methods
 
     }
 }

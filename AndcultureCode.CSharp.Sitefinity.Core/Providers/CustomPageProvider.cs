@@ -22,7 +22,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
 
         #region ICustomPageProvider Implementation
 
-        public IResult<T> Create<T>(
+        public virtual IResult<T> Create<T>(
             T     entity, 
             Guid? createdById = null
         ) where T : DataItemEntity => Do<T>.Try(r =>
@@ -54,7 +54,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return entity;
         }).Result;
 
-        public IResult<IEnumerable<T>> Create<T>(
+        public virtual IResult<IEnumerable<T>> Create<T>(
             IEnumerable<T> entities, 
             Guid?          createdById = null
         ) where T : DataItemEntity => Do<IEnumerable<T>>.Try(r =>
@@ -102,7 +102,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return created;
         }).Result;
 
-        public IResult<bool> Delete<T>(
+        public virtual IResult<bool> Delete<T>(
             Guid  id,
             Guid? deletedById = null,
             bool  soft        = true
@@ -118,7 +118,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return Delete(findResult.ResultObject, deletedById, soft).ResultObject;
         }).Result;
 
-        public IResult<bool> Delete<T>(
+        public virtual IResult<bool> Delete<T>(
             T     item, 
             Guid? deletedById = null, 
             bool  soft        = true
@@ -160,7 +160,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return true;
         }).Result;
 
-        public IResult<IQueryable<T>> FindAll<T>(
+        public virtual IResult<IQueryable<T>> FindAll<T>(
             Expression<Func<T, bool>>                 filter            = null,
             Expression<Func<T, object>>               includes          = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy           = null,
@@ -192,7 +192,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return queryable;
         }).Result;
 
-        public IResult<T> FindById<T>(
+        public virtual IResult<T> FindById<T>(
             Guid                        id,
             Expression<Func<T, object>> includes = null
         ) where T : DataItemEntity => Do<T>.Try(r =>
@@ -210,7 +210,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return queryable.FirstOrDefault();
         }).Result;
 
-        public IResult<bool> Restore<T>(Guid id) where T : DataItemEntity => Do<bool>.Try(r =>
+        public virtual IResult<bool> Restore<T>(Guid id) where T : DataItemEntity => Do<bool>.Try(r =>
         {
             var findResult = FindById<T>(id);
             if (findResult.HasErrors)
@@ -229,7 +229,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return true;
         }).Result;
 
-        public IResult<bool> Restore<T>(T entity) where T : DataItemEntity => Do<bool>.Try(r =>
+        public virtual IResult<bool> Restore<T>(T entity) where T : DataItemEntity => Do<bool>.Try(r =>
         {
             if (entity == null)
             {
@@ -256,7 +256,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return true;
         }).Result;
 
-        public IResult<bool> Update<T>(T item, Guid? updatedById = null) where T : DataItemEntity => Do<bool>.Try(r =>
+        public virtual IResult<bool> Update<T>(T item, Guid? updatedById = null) where T : DataItemEntity => Do<bool>.Try(r =>
         {
             if (item is IUpdatable)
             {
@@ -269,7 +269,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
             return true;
         }).Result;
 
-        public IResult<bool> Update<T>(IEnumerable<T> items, Guid? updatedById = null) where T : DataItemEntity => Do<bool>.Try(r =>
+        public virtual IResult<bool> Update<T>(IEnumerable<T> items, Guid? updatedById = null) where T : DataItemEntity => Do<bool>.Try(r =>
         {
             var numUpdated = 0;
 
@@ -295,7 +295,7 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Providers
 
         #endregion ICustomPageProvider Implementation
 
-        public void SaveChanges() => this.GetContext().SaveChanges();
+        public virtual void SaveChanges() => this.GetContext().SaveChanges();
 
     }
 }

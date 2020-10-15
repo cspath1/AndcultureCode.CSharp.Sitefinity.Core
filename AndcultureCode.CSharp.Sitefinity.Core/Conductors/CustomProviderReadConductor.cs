@@ -9,14 +9,14 @@ namespace AndcultureCode.CSharp.Sitefinity.Core.Conductors
 {
     public class CustomProviderReadConductor : CustomProviderConductorBase, ICustomProviderReadConductor
     {
-        public IResult<IQueryable<T>> FindAll<T>(
+        public virtual IResult<IQueryable<T>> FindAll<T>(
             Expression<Func<T, bool>>                 filter            = null,
             Expression<Func<T, object>>               includes          = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy           = null,
             bool                                      narrowApplication = true
         ) where T : DataItemEntity => getProvider().FindAll(filter, includes, orderBy, narrowApplication);
 
-        public IResult<T> FindById<T>(
+        public virtual IResult<T> FindById<T>(
             Guid id,
             Expression<Func<T, object>> includes = null
         ) where T : DataItemEntity => getProvider().FindById<T>(id, includes);
